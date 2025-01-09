@@ -6,14 +6,14 @@ pipeline {
                 checkout scm
             }
         }
-        stage('Build') {
+        stage('Install') {
             steps {
-                echo 'Building the application...'
+                sh 'npm install'
             }
         }
         stage('Test') {
             steps {
-                echo 'Running tests...'
+                sh 'npm test'
             }
         }
         stage('Deploy') {
@@ -22,12 +22,5 @@ pipeline {
             }
         }
     }
-    post {
-        success {
-            echo 'Build succeeded!'
-        }
-        failure {
-            echo 'Build failed!'
-        }
-    }
 }
+
