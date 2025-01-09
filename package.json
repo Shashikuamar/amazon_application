@@ -1,0 +1,10 @@
+stage('Checkout') {
+    steps {
+        checkout scm
+        script {
+            // List files in the workspace to confirm package.json is present
+            sh 'ls -alh'
+        }
+    }
+}
+
