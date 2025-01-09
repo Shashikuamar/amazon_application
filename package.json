@@ -1,10 +1,13 @@
-stage('Checkout') {
-    steps {
-        checkout scm
-        script {
-            // List files in the workspace to confirm package.json is present
-            sh 'ls -alh'
-        }
-    }
+{
+  "name": "your-project-name",
+  "version": "1.0.0",
+  "description": "Your project description",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "example-package": "^1.0.0"
+  }
 }
 
